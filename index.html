@@ -1,18 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html data-theme="light">
 
 <head>
     <title>Toan Do | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <h2>Hi! I'm Toan Do</h2>
-    <p>
-        A Junior Electrical Engineering Student at George Mason University.
-    </p>
-    <p>
-        This is my portfolio website. It is still very much under construction, but I will be adding more content soon. Please check back later!
-    </p>
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <button id="theme-button">Toggle Dark Mode</button>
+    </div>
+
+    <div class="header">
+        <img width="200" height="200" class="profile-pic" src="media/profile.jpg" alt="Profile Picture">
+        <h1>Hi! I'm Toan Do</h1>
+        <p>
+            A Junior Electrical Engineering Student at George Mason University.
+        </p>
+        <p>
+            This is my portfolio website. It is still very much under construction, but I will be adding more content soon. Please check back later!
+        </p>
+    </div>
+
+    <div id="about">
+        <h2>About Me</h2>
+        <p>
+            I am a passionate and dedicated student with a strong interest in electrical engineering. I enjoy working on projects that challenge me and allow me to grow as a professional.
+        </p>
+    </div>
+
+    <div id="projects">
+        <h2>Projects</h2>
+        <p>
+            Here are some of the projects I have worked on:
+        </p>
+        <article>
+            <h3>Project 1: Description of project 1.</h3>
+            <p>
+                This is a brief description of the first project.
+            </p>
+        </article>
+        <article>
+            <h3>Project 2: Description of project 2.</h3>
+            <p>
+                This is a brief description of the second project.
+            </p>
+        </article>
+        <article>
+            <h3>Personal Home Lab</h3>
+            <p>
+                This is a brief description of the third project.
+            </p>
+        </article>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
