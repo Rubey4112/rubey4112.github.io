@@ -18,3 +18,16 @@ html {
     background-color: var(--background);
     color: var(--text);
 }
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.projects-grid article {
+    border: 1px solid var(--primary);
+    display: flex; 
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
