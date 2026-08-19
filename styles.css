@@ -1,0 +1,45 @@
+:root[data-theme="light"] {
+    --text: #070c12;
+    --background: #f1f4f9;
+    --primary: #5179b8;
+    --secondary: #bd9dd7;
+    --accent: #bb6ec4;
+}
+
+:root[data-theme="dark"] {
+    --text: #edf2f8;
+    --background: #06090e;
+    --primary: #476eae;
+    --secondary: #482862;
+    --accent: #883b91;
+}
+
+html {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: 'Helvetica', sans-serif;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+}
+
+.projects-grid article {
+    /* border: 1px solid var(--primary); */
+    display: flex; 
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.projects-grid article img {
+    object-fit: cover;
+    object-position: left;
+    width: 25vw;
+    height: 25vw;
+}
+
+.projects-grid article .project-info {
+    padding: 30px 40px 40px;
+}
