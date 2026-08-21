@@ -19,6 +19,11 @@ html {
     color: var(--text);
     font-family: 'Helvetica', sans-serif;
     scroll-padding-top: 50px;
+    padding-top: 60px;
+}
+
+body {
+    margin: 0;
 }
 
 .navbar ul {
@@ -87,4 +92,22 @@ html {
 .projects-grid article .project-date {
     color:hsl(from var(--text) h calc(s - 40) calc(l + 30));
     font-size: 14px;
+}
+
+#about {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+header div{
+    margin-right: 50px;
+}
+
+header img{
+    margin-left: 50px;
 }
