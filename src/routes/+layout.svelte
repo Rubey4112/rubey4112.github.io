@@ -57,23 +57,25 @@
 	<svelte:element this={"script"} type="application/ld+json">{jsonLd}</svelte:element>
 </svelte:head>
 
-<a class="skip-link" href="#main">Skip to content</a>
+<div class="sheet">
+	<a class="skip-link" href="#main">Skip to content</a>
 
-<header class="site-header">
-	<div class="accent-rule" aria-hidden="true"></div>
-	<div class="wrap masthead">
-		<a class="wordmark" href={resolve('/#top')}>{site.name}</a>
-		<Nav {current} />
-		<ThemeToggle />
-	</div>
-</header>
-
-<main id="main">
-	{#key page.url.pathname}
-		<div style="display: contents" {@attach watchSections}>
-			{@render children()}
+	<header class="site-header">
+		<div class="accent-rule" aria-hidden="true"></div>
+		<div class="wrap masthead">
+			<a class="wordmark" href={resolve('/#top')}>{site.name}</a>
+			<Nav {current} />
+			<ThemeToggle />
 		</div>
-	{/key}
-</main>
+	</header>
 
-<Footer />
+	<main id="main">
+		{#key page.url.pathname}
+			<div style="display: contents" {@attach watchSections}>
+				{@render children()}
+			</div>
+		{/key}
+	</main>
+
+	<Footer />
+</div>
