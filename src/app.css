@@ -153,6 +153,14 @@ a:hover {
 	background: var(--header);
 	border-bottom: 1px solid var(--line);
 	backdrop-filter: blur(10px);
+	font-family: Archivo, 'Source Sans 3', 'Segoe UI', Helvetica, Arial, sans-serif;
+	transform: translateY(0);
+	transition: transform 240ms ease;
+}
+
+.site-header--hidden {
+	transform: translateY(-100%);
+	pointer-events: none;
 }
 
 .accent-rule {
@@ -170,14 +178,30 @@ a:hover {
 	padding-block: 0.35rem;
 }
 
+.brand {
+	display: flex;
+	align-items: baseline;
+	gap: 0.7rem;
+	min-width: 0;
+}
+
 .wordmark {
 	color: var(--text);
-	font-family: Newsreader, Georgia, serif;
-	font-size: 1.85rem;
-	font-weight: 600;
-	letter-spacing: -0.03em;
+	font-size: 1.7rem;
+	font-weight: 800;
+	letter-spacing: -0.06em;
 	line-height: 1;
 	text-decoration: none;
+}
+
+.brand-tag {
+	margin: 0;
+	color: var(--muted);
+	font-size: 0.62rem;
+	font-weight: 600;
+	letter-spacing: 0.16em;
+	line-height: 1.15;
+	text-transform: uppercase;
 }
 
 .wordmark:hover {
@@ -207,7 +231,9 @@ a:hover {
 	align-items: center;
 	min-height: 2.75rem;
 	color: var(--text);
-	font-weight: 600;
+	font-size: 0.95rem;
+	font-weight: 500;
+	letter-spacing: 0.012em;
 	text-decoration: none;
 }
 
@@ -612,8 +638,12 @@ a:hover {
 		padding-block: 0.55rem 0.35rem;
 	}
 
-	.wordmark {
+	.brand {
 		grid-area: mark;
+	}
+
+	.brand-tag {
+		display: none;
 	}
 
 	.primary-nav {
@@ -655,6 +685,10 @@ a:hover {
 	html {
 		scroll-behavior: auto;
 	}
+
+	.site-header {
+		transition: none;
+	}
 }
 
 @media print {
@@ -662,6 +696,7 @@ a:hover {
 	.theme-toggle,
 	.skip-link {
 		position: static;
+		transform: none;
 	}
 
 	.theme-toggle,

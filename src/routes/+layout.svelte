@@ -10,6 +10,23 @@
 
 	let { children }: LayoutProps = $props();
 	let current = $state('');
+	let headerHidden = $state(false);
+	let lastScrollY = 0;
+
+	function onScroll() {
+		const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		const y = window.scrollY;
+		if (reduceMotion) {
+			headerHidden = false;
+			lastScrollY = y;
+			return;
+		}
+		const delta = y - lastScrollY;
+		if (y < 48) headerHidden = false;
+		else if (delta > 8) headerHidden = true;
+		else if (delta < -8) headerHidden = false;
+		lastScrollY = y;
+	}
 
 	const sectionIds = ['about', 'experience', 'projects', 'contact'];
 
@@ -57,13 +74,18 @@
 	<svelte:element this={"script"} type="application/ld+json">{jsonLd}</svelte:element>
 </svelte:head>
 
+<svelte:window onscroll={onScroll} />
+
 <div class="sheet">
 	<a class="skip-link" href="#main">Skip to content</a>
 
-	<header class="site-header">
+	<header class={['site-header', headerHidden && 'site-header--hidden']} inert={headerHidden}>
 		<div class="accent-rule" aria-hidden="true"></div>
 		<div class="wrap masthead">
-			<a class="wordmark" href={resolve('/#top')}>{site.name}</a>
+			<div class="brand">
+				<a class="wordmark" href={resolve('/#top')}>{site.name}</a>
+				<p class="brand-tag">Electrical engineering</p>
+			</div>
 			<Nav {current} />
 			<ThemeToggle />
 		</div>
